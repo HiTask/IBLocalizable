@@ -34,4 +34,21 @@ extension UIBarItem: Localizable {
         }
         
     }
+	
+	/// Applies the localizable string from UIKit bundle to the localizable field of the supported view
+	@IBInspectable public var localizableUIKitString: String{
+		
+		get{
+			guard let text = self.localizableProperty else{
+				return ""
+			}
+			return text
+		}
+		set{
+			/**
+			*  Applys the localization to the property
+			*/
+			applyLocalizableUIKitString(newValue)
+		}
+	}
 }

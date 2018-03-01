@@ -15,6 +15,10 @@ extension String {
     public var localized: String {
         return localize(withBundle: Bundle.main)
     }
+	
+	public var localizedUIKit: String {
+		return localize(withBundle: Bundle(identifier: "com.apple.UIKit") ?? Bundle.main)
+	}
     
     public func localize(withBundle bundle: Bundle) -> String
     {

@@ -17,7 +17,7 @@ extension UITextField {
             return self.placeholder
         }
         set{
-            self.placeholder = newValue
+			self.attributedPlaceholder = self.attributedPlaceholder?.replaceCharactersAndKeepAttributes(newValue)
         }
     }
 

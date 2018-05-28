@@ -16,7 +16,8 @@ extension UIButton {
             return self.currentTitle
         }
         set{
-            self.setTitle(newValue, for: UIControlState())
+			let newTitle = self.attributedTitle(for: UIControlState())?.replaceCharactersAndKeepAttributes(newValue)
+			self.setAttributedTitle(newTitle, for: UIControlState())
         }
     }
   

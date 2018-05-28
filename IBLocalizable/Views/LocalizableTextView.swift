@@ -17,7 +17,7 @@ extension UITextView{
             return self.text
         }
         set{
-            self.text = newValue
+			self.attributedText = self.attributedText?.replaceCharactersAndKeepAttributes(newValue)
         }
     }
 }

@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "IBLocalizable"
-  s.version      = "1.1.3"
+  s.version      = "1.1.4"
   s.summary      = "Localize your views from Interface Builder"
   s.description  = <<-DESC
   Localize your views from Interface Builder easily, written in Swift

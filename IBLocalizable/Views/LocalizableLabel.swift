@@ -10,7 +10,7 @@ import UIKit
 // MARK: - Label extension that adds the localizable property
 extension UILabel {
     
-    public override var localizableProperty: String?{
+	@objc public override var localizableProperty: String?{
         
         get{
             return self.text

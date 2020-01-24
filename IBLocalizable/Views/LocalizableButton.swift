@@ -13,11 +13,15 @@ extension UIButton {
 	@objc public override var localizableProperty: String?{
         
         get{
-            return self.currentTitle
+			return currentAttributedTitle?.string ?? currentTitle
         }
         set{
-			let newTitle = self.attributedTitle(for: UIControlState())?.replaceCharactersAndKeepAttributes(newValue)
-			self.setAttributedTitle(newTitle, for: UIControlState())
+			if let currentAttributedTitle = currentAttributedTitle {
+				let newTitle = currentAttributedTitle.replaceCharactersAndKeepAttributes(newValue)
+				self.setAttributedTitle(newTitle, for: .normal)
+			} else {
+				self.setTitle(newValue, for: .normal)
+			}
         }
     }
   
